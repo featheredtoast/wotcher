@@ -37,19 +37,19 @@ module.exports = (robot) ->
       if dieType == 20 && roll == 20
         res.reply 'Rolled a 20 (CRIT!)'
       else
-        res.reply 'Rolled ' + @displayRoll(roll, dieType)
+        res.reply 'Rolled ' + displayRoll(roll, dieType)
     else
       response = 'rolled '
       total = 0
       for i in [0..dieNum]
         roll = Math.floor(Math.random() * dieType) + 1
         if i==1
-          response += @displayRoll(roll, dieType)
+          response += displayRoll(roll, dieType)
           total += roll
         else
-          response += ' + ' + @displayRoll(roll, dieType)
+          response += ' + ' + displayRoll(roll, dieType)
           total += roll
-      if modifier not null and modifierVal not null
+      if modifier != null and modifierVal != null
         if modifier == '-'
           total -= modifierVal
         else
@@ -58,5 +58,5 @@ module.exports = (robot) ->
       response += ' = ' + total
       res.reply response
 
-  displayRoll: (roll, dieType) ->
-    dieType == 6 ? d6s[roll - 1] + ' (' + roll + ')' : roll
+  displayRoll = (roll, dieType) ->
+    if dieType == 6 then d6s[roll - 1] + ' (' + roll + ')' else roll
