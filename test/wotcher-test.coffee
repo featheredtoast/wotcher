@@ -28,8 +28,8 @@ describe 'dicer', ->
     @room.destroy()
 
   it 'does dice', ->
-    @room.user.say('alice', '@hubot roll 1d6').then =>
+    @room.user.say('alice', '@hubot roll 2d1+ 2').then =>
       expect(@room.messages).to.eql [
-        ['alice', '@hubot roll 1d6']
-        ['hubot', '@alice rolled 3']
+        ['alice', '@hubot roll 2d1+ 2']
+        ['hubot', '@alice rolled 1 + 1 + 2 = 4']
       ]
