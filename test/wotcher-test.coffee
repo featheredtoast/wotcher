@@ -33,7 +33,7 @@ describe 'dicer', ->
         ['alice', '@hubot roll d1']
         ['hubot', '@alice Rolled 1']
       ]
-      
+
   it 'does multiple dice and modifiers', ->
     @room.user.say('alice', '@hubot roll 2d1+ 2').then =>
       expect(@room.messages).to.eql [
