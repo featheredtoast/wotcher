@@ -22,7 +22,7 @@ describe 'wotcher', ->
 
 describe 'dicer', ->
   beforeEach ->
-    @roolm = rollingHelper.createRoom()
+    @room = rollingHelper.createRoom()
 
   afterEach ->
     @room.destroy()
