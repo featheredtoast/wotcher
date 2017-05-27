@@ -41,7 +41,7 @@ module.exports = (robot) ->
     else
       response = 'rolled '
       total = 0
-      for i in [0..dieNum]
+      for i in [1..dieNum]
         roll = Math.floor(Math.random() * dieType) + 1
         if i==1
           response += displayRoll(roll, dieType)
@@ -49,7 +49,7 @@ module.exports = (robot) ->
         else
           response += ' + ' + displayRoll(roll, dieType)
           total += roll
-      if modifier != null and modifierVal != null
+      if !!modifier and !!modifierVal
         if modifier == '-'
           total -= modifierVal
         else
