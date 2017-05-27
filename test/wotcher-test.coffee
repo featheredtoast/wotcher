@@ -27,9 +27,16 @@ describe 'dicer', ->
   afterEach ->
     @room.destroy()
 
-  it 'does dice', ->
+  it 'does single dice', ->
+    @room.user.say('alice', '@hubot roll d1').then =>
+      expect(@room.messages).to.eql [
+        ['alice', '@hubot roll d1']
+        ['hubot', '@alice Rolled 1']
+      ]
+      
+  it 'does multiple dice and modifiers', ->
     @room.user.say('alice', '@hubot roll 2d1+ 2').then =>
       expect(@room.messages).to.eql [
         ['alice', '@hubot roll 2d1+ 2']
-        ['hubot', '@alice rolled 1 + 1 + 2 = 4']
+        ['hubot', '@alice Rolled 1 + 1 + 2 = 4']
       ]
