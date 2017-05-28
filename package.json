@@ -1,7 +1,7 @@
 {
   "name": "hubot-wotcher",
   "description": "Wotcher has the deals",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Jeff Wong <awole20@gmail.com>",
   "license": "MIT",
 
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-wotcher.git"
+    "url": "git://github.com/featheredtoast/wotcher.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-wotcher/issues"
+    "url": "https://github.com/featheredtoast/wotcher/issues"
   },
 
   "dependencies": {
