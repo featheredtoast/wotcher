@@ -14,7 +14,7 @@
 #   Jeff Wong <awole20@gmail.com>
 
 module.exports = (robot) ->
-  robot.listen /(roll|\/r) (\d*)d(\d*)(\W*(\+|-)\W*(\d))?(\W*#(.*))?/, (res) ->
+  robot.hear /(roll|\/r) (\d*)d(\d*)(\W*(\+|-)\W*(\d))?(\W*#(.*))?/, (res) ->
     dieType = parseInt(res.match[3])
     dieNum = parseInt(res.match[2])
     modifier = res.match[5]
