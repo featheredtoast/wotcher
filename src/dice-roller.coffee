@@ -13,8 +13,6 @@
 # Author:
 #   Jeff Wong <awole20@gmail.com>
 
-os = require 'os'
-
 computeDiceRoll = (dieType, dieNum, modifier, modifierVal, comment) ->
   response = "`#{dieNum}d#{dieType}"
   if !!modifier and !!modifierVal
@@ -68,7 +66,7 @@ module.exports = (robot) ->
       modifierVal: parseInt(res.match[7])
       comment: res.match[9]
     robot.brain.set("roll_#{rollName}", rollInfo)
-    res.reply rollDice(rollInfo.dieType, rollInfo.dieNum, rollInfo.modifier, rollInfo.modifierVal, rollInfo.comment) + os.EOL + "Roll saved."
+    res.reply rollDice(rollInfo.dieType, rollInfo.dieNum, rollInfo.modifier, rollInfo.modifierVal, rollInfo.comment), "Roll saved."
 
   robot.hear /(roll|\/r) \$(\w*)$/i, (res) ->
     rollName = res.match[2]

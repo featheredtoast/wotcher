@@ -66,7 +66,8 @@ describe 'dicer', ->
     @room.user.say('alice', '/r $test 2d1+2 #my awesome roll').then =>
       expect(@room.messages).to.eql [
         ['alice', '/r $test 2d1+2 #my awesome roll']
-        ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4\nRoll saved.']
+        ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4']
+        ['hubot','@alice Roll saved.']
       ]
 
   it 'can replay multiple rolls', ->
@@ -74,7 +75,8 @@ describe 'dicer', ->
       @room.user.say('alice', '/r $test').then =>
         expect(@room.messages).to.eql [
           ['alice', '/r $test 2d1+2 #my awesome roll']
-          ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4\nRoll saved.']
+          ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4']
+          ['hubot','@alice Roll saved.']
           ['alice', '/r $test']
           ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4']
         ]
