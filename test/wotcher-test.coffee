@@ -31,12 +31,19 @@ describe 'dicer', ->
     @room.user.say('alice', '@hubot roll d1').then =>
       expect(@room.messages).to.eql [
         ['alice', '@hubot roll d1']
-        ['hubot', '@alice Rolled 1']
+        ['hubot', '@alice `1d1` = (1) = 1']
       ]
 
   it 'does multiple dice and modifiers', ->
     @room.user.say('alice', '@hubot roll 2d1+ 2').then =>
       expect(@room.messages).to.eql [
         ['alice', '@hubot roll 2d1+ 2']
-        ['hubot', '@alice Rolled 1 + 1 + 2 = 4']
+        ['hubot', '@alice `2d1+2` = (1 + 1 + 2) = 4']
+      ]
+
+  it 'can comment rolls', ->
+    @room.user.say('alice', '@hubot roll 2d1+2 #my awesome roll').then =>
+      expect(@room.messages).to.eql [
+        ['alice', '@hubot roll 2d1+2 #my awesome roll']
+        ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4']
       ]
