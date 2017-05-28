@@ -41,6 +41,13 @@ describe 'dicer', ->
         ['hubot', '@alice `1d1` = (1) = 1']
       ]
 
+  it 'is case insensitive', ->
+    @room.user.say('alice', 'Roll d1').then =>
+      expect(@room.messages).to.eql [
+        ['alice', 'Roll d1']
+        ['hubot', '@alice `1d1` = (1) = 1']
+      ]
+
   it 'does multiple dice and modifiers', ->
     @room.user.say('alice', '@hubot roll 2d1+ 2').then =>
       expect(@room.messages).to.eql [
