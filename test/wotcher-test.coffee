@@ -61,3 +61,20 @@ describe 'dicer', ->
         ['alice', 'roll 2d1+2 #my awesome roll']
         ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4']
       ]
+
+  it 'can replay rolls', ->
+    @room.user.say('alice', '/r $test 2d1+2 #my awesome roll').then =>
+      expect(@room.messages).to.eql [
+        ['alice', '/r $test 2d1+2 #my awesome roll']
+        ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4,Roll saved.']
+      ]
+
+  it 'can replay multiple rolls', ->
+    @room.user.say('alice', '/r $test 2d1+2 #my awesome roll').then =>
+      @room.user.say('alice', '/r $test').then =>
+        expect(@room.messages).to.eql [
+          ['alice', '/r $test 2d1+2 #my awesome roll']
+          ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4,Roll saved.']
+          ['alice', '/r $test']
+          ['hubot', '@alice `2d1+2` my awesome roll = (1 + 1 + 2) = 4']
+        ]
