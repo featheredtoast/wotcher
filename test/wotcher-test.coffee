@@ -3,7 +3,7 @@ chai = require 'chai'
 
 expect = chai.expect
 
-helper = new Helper('../src/wotcher.coffee')
+helper = new Helper('../src/wotcher.js')
 rollingHelper = new Helper('../src/dice-roller.coffee')
 
 describe 'wotcher', ->

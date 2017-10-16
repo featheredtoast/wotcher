@@ -16,8 +16,11 @@
     "url": "https://github.com/featheredtoast/wotcher/issues"
   },
 
-  "dependencies": {
-  },
+    "dependencies": {
+        "cheerio": "^0.19.0",
+        "got": "^6.1.0",
+        "sanitize-html": "^1.11.3"
+    },
 
   "peerDependencies": {
     "hubot": "2.x"
