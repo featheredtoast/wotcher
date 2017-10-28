@@ -1,7 +1,7 @@
 {
   "name": "hubot-wotcher",
   "description": "Wotcher has the deals",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Jeff Wong <awole20@gmail.com>",
   "license": "MIT",
 

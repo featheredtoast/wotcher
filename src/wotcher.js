@@ -27,8 +27,12 @@ module.exports = (robot) => {
             var body = res.body;
             if (res.statusCode !== 200) return msg.send('Steam currently unavailable!');
             let $ = cheerio.load(body);
-            let idAttr = $('.dailydeal_desc .dailydeal_countdown').attr('id');
-            let id = idAttr.substr(idAttr.length - 6);
+            let id = $('#tab_specials_content > .tab_item:not([data-ds-packageid])').map(
+                function(e, li) {
+                    return $(this).data('ds-appid');
+                }
+            ).get().sort( function() { return 0.5 - Math.random() } )[0];
+            robot.logger.info(id);
             msg.send("Wotcher got the deals!", `https://store.steampowered.com/app/${id}`);
         });
     });
