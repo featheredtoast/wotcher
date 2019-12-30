@@ -30,9 +30,9 @@ const computeDiceRoll = function(
   }
   response += " = (";
   let total = 0;
-  for (let i = 1; i < dieNum; i++) {
+  for (let i = 0; i < dieNum; i++) {
     const roll = Math.floor(Math.random() * dieType) + 1;
-    if (i === 1) {
+    if (i === 0) {
       response += roll;
       total += roll;
     } else {
