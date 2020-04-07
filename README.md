@@ -2,7 +2,7 @@
 
 Wotcher has the deals
 
-See [`src/wotcher.coffee`](src/wotcher.coffee) for full documentation.
+See [`src/wotcher.coffee`](src/wotcher.js) for full documentation.
 
 ## Installation
 
