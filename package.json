@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "got": "^10.2.0",
+    "got": "^11.8.5",
     "sanitize-html": "^1.20.1"
   },
   "peerDependencies": {
