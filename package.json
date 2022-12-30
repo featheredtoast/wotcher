@@ -29,7 +29,7 @@
     "grunt-mocha-test": "~0.13.3",
     "hubot": "3.x",
     "matchdep": "~2.0.0",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "sinon": "^8.0.1",
     "sinon-chai": "^3.4.0"
   },
